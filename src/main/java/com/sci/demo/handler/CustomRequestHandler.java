@@ -34,9 +34,6 @@ public interface CustomRequestHandler extends RequestHandler {
         Map<String,Object> sessionAttributes = handlerInput.getAttributesManager().getSessionAttributes();
         Map<String,Object> localAttributes = new LinkedHashMap();
 
-        log.error("Output Slot : "+outputSlot);
-        log.error("Session Attributes : "+sessionAttributes);
-
         if(slotNames.length>0){
             for(String slotName : slotNames){
                 if(slotMap.containsKey(slotName) && slotMap.get(slotName)!=null){
@@ -44,7 +41,6 @@ public interface CustomRequestHandler extends RequestHandler {
                 }
             }
             if(localAttributes.size()>0){
-                log.error("Slot Values : "+localAttributes);
                 sessionAttributes.put(outputSlot,getFinalValue(localAttributes));
                 handlerInput.getAttributesManager().setSessionAttributes(sessionAttributes);
             }else{
