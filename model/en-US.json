@@ -1,0 +1,855 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "digital companion",
+      "intents": [
+        {
+          "name": "DialogIntent",
+          "slots": [],
+          "samples": [
+            "create new task",
+            "create new message",
+            "create new request"
+          ]
+        },
+        {
+          "name": "GetServiceIntent",
+          "slots": [
+            {
+              "name": "Service",
+              "type": "SERVICES"
+            }
+          ],
+          "samples": [
+            "{Service}",
+            "I need {Service}",
+            "I want {Service}",
+            "Give me {Service}"
+          ]
+        },
+        {
+          "name": "GetLocationIntent",
+          "slots": [
+            {
+              "name": "LocalBusiness",
+              "type": "AMAZON.LocalBusiness"
+            },
+            {
+              "name": "Room",
+              "type": "AMAZON.Room"
+            },
+            {
+              "name": "Address",
+              "type": "AMAZON.StreetAddress"
+            }
+          ],
+          "samples": [
+            "{LocalBusiness}",
+            "At {LocalBusiness}",
+            "In {LocalBusiness}",
+            "To {LocalBusiness}",
+            "From {LocalBusiness}",
+            "{Room}",
+            "At {Room}",
+            "In {Room}",
+            "To {Room}",
+            "From {Room}",
+            "{Address}",
+            "At {Address}",
+            "In {Address}",
+            "To {Address}",
+            "From {Address}"
+          ]
+        },
+        {
+          "name": "GetTimeIntent",
+          "slots": [
+            {
+              "name": "Time",
+              "type": "AMAZON.TIME",
+              "multipleValues": {
+                "enabled": true
+              }
+            },
+            {
+              "name": "Day",
+              "type": "AMAZON.DayOfWeek"
+            },
+            {
+              "name": "Date",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "on {Day} {Time}",
+            "on {Date} {Time}",
+            "at {Day} {Time}",
+            "at {Date} {Time}",
+            "on {Time}",
+            "at {Time}",
+            "{Day} {Time}",
+            "{Date} {Time}",
+            "{Time}",
+            "I will like it {Time}",
+            "I need it at {Time}",
+            "I need it {Time}",
+            "I want it {Time}",
+            "I want it at {Time}",
+            "I will like it {Day} {Time}",
+            "I need it at {Day} {Time}",
+            "I need it {Day} {Time}",
+            "I want it {Day} {Time}",
+            "I want it at {Day} {Time}",
+            "I will like it {Date} {Time}",
+            "I need it at {Date} {Time}",
+            "I need it {Date} {Time}",
+            "I want it {Date} {Time}",
+            "I want it at {Date} {Time}"
+          ]
+        },
+        {
+          "name": "GetRecipientIntent",
+          "slots": [
+            {
+              "name": "Recipient",
+              "type": "AMAZON.US_FIRST_NAME"
+            }
+          ],
+          "samples": [
+            "{Recipient}",
+            "ask {Recipient}",
+            "call {Recipient}",
+            "tell {Recipient}",
+            "invite {Recipient}"
+          ]
+        },
+        {
+          "name": "GetNoteIntent",
+          "slots": [
+            {
+              "name": "Adjective",
+              "type": "ADJECTIVES",
+              "multipleValues": {
+                "enabled": true
+              }
+            },
+            {
+              "name": "Phrase",
+              "type": "PHRASES"
+            },
+            {
+              "name": "Things",
+              "type": "THINGS",
+              "multipleValues": {
+                "enabled": true
+              }
+            },
+            {
+              "name": "Quantity",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+              "name": "Unit",
+              "type": "UNITS"
+            },
+            {
+              "name": "FreeText",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "add {FreeText}",
+            "{Adjective}",
+            "{Phrase} {Adjective}",
+            "{Phrase} {Adjective} {Things}",
+            "{Phrase} {Things} {Adjective}",
+            "{Phrase} {Quantity} {Things} {Adjective}",
+            "{Phrase} {Quantity} {Unit} {Things} {Adjective}",
+            "{Phrase} {Adjective} {Quantity} {Unit} {Things}",
+            "{Phrase} {Quantity} {Unit} {Adjective} {Things}",
+            "{Adjective} {Phrase} {Quantity} {Unit} {Things}",
+            "{Adjective} {Phrase} {Things}",
+            "{Adjective} {Phrase}",
+            "{Quantity} {Unit} {Things}",
+            "{Things} {Quantity} {Unit}",
+            "{Phrase} {Quantity} {Unit}"
+          ]
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "SERVICES",
+          "values": [
+            {
+              "name": {
+                "value": "Transportation"
+              }
+            },
+            {
+              "name": {
+                "value": "Commute"
+              }
+            },
+            {
+              "name": {
+                "value": "Vehicle"
+              }
+            },
+            {
+              "name": {
+                "value": "Lift"
+              }
+            },
+            {
+              "name": {
+                "value": "Food"
+              }
+            },
+            {
+              "name": {
+                "value": "Meal"
+              }
+            },
+            {
+              "name": {
+                "value": "Cleaning"
+              }
+            },
+            {
+              "name": {
+                "value": "shopping"
+              }
+            },
+            {
+              "name": {
+                "value": "grocery shopping"
+              }
+            },
+            {
+              "name": {
+                "value": "traveling"
+              }
+            },
+            {
+              "name": {
+                "value": "purchase"
+              }
+            },
+            {
+              "name": {
+                "value": "pickup"
+              }
+            },
+            {
+              "name": {
+                "value": "service"
+              }
+            },
+            {
+              "name": {
+                "value": "repairing"
+              }
+            },
+            {
+              "name": {
+                "value": "servicing"
+              }
+            }
+          ]
+        },
+        {
+          "name": "ADJECTIVES",
+          "values": [
+            {
+              "name": {
+                "value": "Fast"
+              }
+            },
+            {
+              "name": {
+                "value": "Fresh"
+              }
+            },
+            {
+              "name": {
+                "value": "Urgent"
+              }
+            },
+            {
+              "name": {
+                "value": "ASAP"
+              }
+            },
+            {
+              "name": {
+                "value": "clean"
+              }
+            },
+            {
+              "name": {
+                "value": "neat"
+              }
+            },
+            {
+              "name": {
+                "value": "big"
+              }
+            },
+            {
+              "name": {
+                "value": "small"
+              }
+            },
+            {
+              "name": {
+                "value": "nothing"
+              }
+            }
+          ]
+        },
+        {
+          "name": "PHRASES",
+          "values": [
+            {
+              "name": {
+                "value": "make it"
+              }
+            },
+            {
+              "name": {
+                "value": "bring it"
+              }
+            },
+            {
+              "name": {
+                "value": "do it"
+              }
+            },
+            {
+              "name": {
+                "value": "I need it"
+              }
+            },
+            {
+              "name": {
+                "value": "please make it"
+              }
+            },
+            {
+              "name": {
+                "value": "please bring it"
+              }
+            },
+            {
+              "name": {
+                "value": "please do it"
+              }
+            },
+            {
+              "name": {
+                "value": "get it"
+              }
+            },
+            {
+              "name": {
+                "value": "get that"
+              }
+            },
+            {
+              "name": {
+                "value": "do that"
+              }
+            },
+            {
+              "name": {
+                "value": "please get it"
+              }
+            },
+            {
+              "name": {
+                "value": "please get that"
+              }
+            },
+            {
+              "name": {
+                "value": "please do that"
+              }
+            },
+            {
+              "name": {
+                "value": "bring"
+              }
+            },
+            {
+              "name": {
+                "value": "take"
+              }
+            },
+            {
+              "name": {
+                "value": "need"
+              }
+            },
+            {
+              "name": {
+                "value": "make"
+              }
+            },
+            {
+              "name": {
+                "value": "I need"
+              }
+            },
+            {
+              "name": {
+                "value": "I want"
+              }
+            },
+            {
+              "name": {
+                "value": "Let's do"
+              }
+            },
+            {
+              "name": {
+                "value": "Let's make"
+              }
+            },
+            {
+              "name": {
+                "value": "Let's go"
+              }
+            },
+            {
+              "name": {
+                "value": "Let's have"
+              }
+            },
+            {
+              "name": {
+                "value": "have"
+              }
+            },
+            {
+              "name": {
+                "value": "get"
+              }
+            },
+            {
+              "name": {
+                "value": "do"
+              }
+            },
+            {
+              "name": {
+                "value": "don't do"
+              }
+            },
+            {
+              "name": {
+                "value": "don't make"
+              }
+            },
+            {
+              "name": {
+                "value": "don't be"
+              }
+            },
+            {
+              "name": {
+                "value": "don't take"
+              }
+            },
+            {
+              "name": {
+                "value": "don't bring"
+              }
+            }
+          ]
+        },
+        {
+          "name": "THINGS",
+          "values": [
+            {
+              "name": {
+                "value": "mango"
+              }
+            },
+            {
+              "name": {
+                "value": "milk"
+              }
+            },
+            {
+              "name": {
+                "value": "fruit"
+              }
+            },
+            {
+              "name": {
+                "value": "fruits"
+              }
+            },
+            {
+              "name": {
+                "value": "grains"
+              }
+            },
+            {
+              "name": {
+                "value": "rice"
+              }
+            },
+            {
+              "name": {
+                "value": "wheat"
+              }
+            },
+            {
+              "name": {
+                "value": "corn"
+              }
+            },
+            {
+              "name": {
+                "value": "water"
+              }
+            },
+            {
+              "name": {
+                "value": "beer"
+              }
+            },
+            {
+              "name": {
+                "value": "juice"
+              }
+            },
+            {
+              "name": {
+                "value": "medicines"
+              }
+            },
+            {
+              "name": {
+                "value": "apples"
+              }
+            },
+            {
+              "name": {
+                "value": "banana"
+              }
+            },
+            {
+              "name": {
+                "value": "brush"
+              }
+            },
+            {
+              "name": {
+                "value": "toothpaste"
+              }
+            },
+            {
+              "name": {
+                "value": "deo"
+              }
+            },
+            {
+              "name": {
+                "value": "comb "
+              }
+            },
+            {
+              "name": {
+                "value": "perfume"
+              }
+            },
+            {
+              "name": {
+                "value": "coffee"
+              }
+            },
+            {
+              "name": {
+                "value": "chocolate"
+              }
+            },
+            {
+              "name": {
+                "value": "drinks"
+              }
+            },
+            {
+              "name": {
+                "value": "eatables"
+              }
+            },
+            {
+              "name": {
+                "value": "clothes"
+              }
+            },
+            {
+              "name": {
+                "value": "jeans"
+              }
+            },
+            {
+              "name": {
+                "value": "shirt"
+              }
+            },
+            {
+              "name": {
+                "value": "sweater"
+              }
+            },
+            {
+              "name": {
+                "value": "parts"
+              }
+            },
+            {
+              "name": {
+                "value": "money"
+              }
+            }
+          ]
+        },
+        {
+          "name": "UNITS",
+          "values": [
+            {
+              "name": {
+                "value": "Meter"
+              }
+            },
+            {
+              "name": {
+                "value": "Litre"
+              }
+            },
+            {
+              "name": {
+                "value": "Feet"
+              }
+            },
+            {
+              "name": {
+                "value": "Inches"
+              }
+            },
+            {
+              "name": {
+                "value": "Grams"
+              }
+            },
+            {
+              "name": {
+                "value": "KiloGrams"
+              }
+            },
+            {
+              "name": {
+                "value": "Pounds"
+              }
+            },
+            {
+              "name": {
+                "value": "USD"
+              }
+            },
+            {
+              "name": {
+                "value": "GBP"
+              }
+            },
+            {
+              "name": {
+                "value": "INR"
+              }
+            },
+            {
+              "name": {
+                "value": "Dollars"
+              }
+            },
+            {
+              "name": {
+                "value": "Rupees"
+              }
+            },
+            {
+              "name": {
+                "value": "Euros"
+              }
+            },
+            {
+              "name": {
+                "value": "Tons"
+              }
+            },
+            {
+              "name": {
+                "value": "millilitres"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "GetLocationIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "LocalBusiness",
+              "type": "AMAZON.LocalBusiness",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {},
+              "validations": [
+                {
+                  "type": "isNotInSet",
+                  "prompt": "Slot.Validation.800418686236.1522572139188.836219250444",
+                  "values": [
+                    "mango",
+                    "milk",
+                    "fruit",
+                    "fruits",
+                    "grains",
+                    "rice",
+                    "wheat",
+                    "corn",
+                    "water",
+                    "beer",
+                    "juice",
+                    "medicines",
+                    "apples",
+                    "banana",
+                    "brush",
+                    "toothpaste",
+                    "deo",
+                    "comb",
+                    "perfume",
+                    "coffee",
+                    "chocolate",
+                    "drinks",
+                    "eatables",
+                    "clothes",
+                    "jeans",
+                    "shirt",
+                    "sweater",
+                    "parts",
+                    "money",
+                    "Meter",
+                    "liter",
+                    "Feet",
+                    "Inches",
+                    "Grams",
+                    "Kilograms",
+                    "Pounds",
+                    "USD",
+                    "GBP",
+                    "INR",
+                    "Dollars",
+                    "Rupees",
+                    "Euros",
+                    "Tons",
+                    "milliliters",
+                    "make it",
+                    "bring it",
+                    "do it",
+                    "I need it",
+                    "please make it",
+                    "please bring it",
+                    "please do it",
+                    "get it",
+                    "get that",
+                    "do that",
+                    "please get it",
+                    "please get that",
+                    "please do that",
+                    "bring",
+                    "take",
+                    "need",
+                    "make",
+                    "I need",
+                    "I want",
+                    "Let's do",
+                    "Let's make",
+                    "Let's go",
+                    "Let's have",
+                    "have",
+                    "get",
+                    "do",
+                    "don't do",
+                    "don't make",
+                    "don't be",
+                    "don't take",
+                    "don't bring",
+                    "Fast",
+                    "Fresh",
+                    "Urgent",
+                    "ASAP",
+                    "clean",
+                    "neat",
+                    "big",
+                    "small",
+                    "nothing"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Room",
+              "type": "AMAZON.Room",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "Address",
+              "type": "AMAZON.StreetAddress",
+              "confirmationRequired": false,
+              "elicitationRequired": false,
+              "prompts": {}
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.800418686236.1522572139188.836219250444",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Can you please try again, where do you want this service?"
+          }
+        ]
+      }
+    ]
+  }
+}
